@@ -1,270 +1,319 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="Gaurav is a PhD candidate with Dr. Xiaoli Bai at Rutgers University.">
-  <meta name="keywords" content="Gaurav Misra, Convex Optimization, Robotics, Space Systems, Control, Graduate student, Mechanical and Aerospace Engineering, Xiaoli Bai">
-  
+<html>
+  <head>
+    <title>Gaurav Misra</title>
+    <meta charset="UTF-8" />
+    <style>
+      .side-by-side {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        align-items: flex-start; /* top-align the two boxes */
+      }
+      .side-by-side img {
+        flex: 1 1 48%;
+        max-width: 48%;
+        height: auto;
+        margin: 0; /* override any inline or inherited margins */
+        display: block; /* ensure no baseline-text shifts */
+      }
+      .side-by-side img:first-of-type {
+  /* this targets the first image (your DOB.png) */
+  margin-top: 30px;  /* tweak this value until it lines up */
+}
+      body {
+        font-family: monospace;
+        max-width: 900px;
+        margin: 1em auto;
+        padding: 0;
+        color: black;
+        background: white;
+      }
+      a {
+        color: blue;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      h1 {
+        margin-bottom: 0.5em;
+      }
+      h2 {
+        margin-top: 2em;
+      }
+      .nav {
+        margin-bottom: 2em;
+      }
+      .nav a {
+        margin-right: 15px;
+      }
+      img.profile {
+        float: right;
+        margin-left: 20px;
+        width: 200px;
+      }
+      figure {
+        margin: 1.5em 0;
+      }
+      img.highlight {
+        display: block;
+        margin: 0.5em auto;
+        width: 500px;
+      }
+      img.highlight_large {
+        display: block;
+        margin: 0.5em auto;
+        width: 800px;
+      }
+      img.highlight_small {
+        display: inline-block;
+        margin: 0.5em;
+        width: 400px;
+      }
+      figcaption {
+        text-align: left;
+        margin: 0.5em auto;
+        font-style: italic;
+      }
+      hr {
+        margin: 2em 0;
+      }
+      figure,
+      .diagram {
+        margin: 1.5em 0;
+      }
+      .diagram {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .block {
+        flex: 1;
+        padding: 0.5em;
+        border: 1px solid #444;
+        border-radius: 4px;
+        background: #fff;
+        text-align: center;
+        font-size: 0.9em;
+      }
+      .arrow {
+        margin: 0 0.3em;
+        font-weight: bold;
+      }
+      .diagram {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 2em 0;
+      }
+      .block {
+        flex: 0 0 150px;
+        padding: 0.8em;
+        border: 2px solid #444;
+        border-radius: 4px;
+        background: #eef;
+        text-align: center;
+        font-size: 0.9em;
+      }
+      .arrow {
+        flex: 0 0 auto;
+        font-size: 1.2em;
+        margin: 0 0.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gaurav Misra</h1>
 
-  <title>Gaurav Misra</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <link href="https://getbootstrap.com/docs/3.3/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="navbar-fixed-top.css" rel="stylesheet">
-
-  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-  <script src="https://getbootstrap.com/docs/3.3/assets/js/ie-emulation-modes-warning.js"></script>
-
- 
-</head>
-
-<body>
-
-  <!-- Fixed navbar -->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Gaurav Misra</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">About</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#pubs">Publications</a></li>
-          <!-- <li class="dropdown">
-         
-          </li> -->
-          <li><a href="#cv">CV</a></li>
-          <li><a href="#contact">Contact</a></li>
-<!--           <li><a href="#resources">Resources</a></li>
- -->        </ul>
- 
-      -->
-      </div><!--/.nav-collapse -->
+    <div class="nav">
+      <a href="#about">Home</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#patents">Patents</a>
+      <a href="#code">Code</a>
+      <a href="#contact">Contact</a>
     </div>
-  </nav>
 
-    <div class="container">
-        <div class="well">
-        <table style="border-spacing: 15px;border-collapse: separate;">
-          <tbody>
-            <tr>
-              <td valign="top" margin-top="10px" style="font-size: 0pt;">
-              <span style="font-size: 15px">
-              <p>
-              </br>
-              </br>
-                Hi there!
-              </br>
-              </br>
-         I completed a Ph.D. in the Mechanical and Aerospace Engineering Department at  <b>
-                <a href="https://mae.rutgers.edu/"></b>Rutgers, The State University of New Jersey</a>, where I worked (and continue to collaborate)
-                with <b><a href="http://x-bai.rutgers.edu"></b>Prof. Xiaoli Bai</a> .              </br>
-              </br>
-       In general, I work on the intersection of Aerospace Control, Robotics, and Convex Optimization. Some of the buzzwords that my research interests relate to include: <b> Guidance, Navigation and Control</b>, <b>Polynomial Optimization</b>, <b>Space Systems</b>, <b> Model Predictive Control </b>, <b> Optimal Control</b>, and <b> Robot Motion Planning</b>.
-            </br>
-            </br>
-            My Ph.D. research centered around tractable convex optimization based planning and control methods for aerospace systems with applications in space robotic system enabled debris mitigation and carrier based aircraft landing control.
-                          <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                Before coming to Rutgers, I received an MS in Aerospace Engineering from <b>
-                <a href="https://www.nmsu.edu/"></b>New Mexico State University</a> where I was a graduate research assistant at the Spacecraft Guidance, Navigation, and Controls Lab. My Master's thesis advisor was <b><a href="https://aksanyal.expressions.syr.edu/"></b> Prof. Amit Sanyal</a>. My MS thesis research focused on coupled orbit-attitude spacecraft dynamics in the proximity of asteroids. I also looked into the nonlinear controllability of underactuated spacecraft in such enviornments using differential geometry tools. 
-              <br>
-              <br>
-              
-              <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                I was also fortunate to complete my bachelor thesis at the  <b><a href="http://www.cnes.fr"></b>French Space Agency (CNES)</a>, Toulouse, France. My bachelor thesis supervisor was Jean-Yves Prado and I worked on asteroid hazard mitigation using Yarkovsky effect reduction. I continued working on the orbital mechanics aspect of this problem as a research assistant at the <b><a href="http://www.imcce.fr"></b>Institut de Mécanique céleste et de calcul des éphémérides (IMCCE)</a>, Paris observatory under the supervision  of Dr. Florent Deleflie. I also completed a summer internship during my junior year at the <b><a href="http://www.dlr.de/irs/en/"></b>Institute of Space Systems, German Aerospace Center (DLR)</a>, Bremen, Germany. 
-              <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                Prior to starting graduate research, I spent some wonderful years at <b><a href="http://www.bits-pilani.ac.in/"></b>BITS - Pilani</a> in India, from where I double majored in Electronics and Instrumentation Engineering and Economics. 
-              </p>
-              </span>
-              <p>
-              <span style="font-size: 20px">
+    <img src="images/gm3.jpg" alt="Gaurav Misra" class="profile" />
 
-              </span>
-              </p>
-              </td>
-              <td width="0pct" valign="top">
-              </br>
-              </br>
-                <div><span class="lfloat"><img width="120px" src="images/gm2.jpg" alt="" title="Gaurav Misra"></span></div>
-              <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-              <a href="https://scholar.google.com/citations?user=khM5VlgAAAAJ&hl=en"> <img width="20px" src="images/google-scholar.png" alt="scholar" title="Google Sholar"></a>
-                <a href="mailto:gaurav.misra@rutgers.edu"><img width="28px" src="images/email.png" alt="gaurav.misra@rutgers.edu" title="Email"> </a>
-               <a href="https://www.linkedin.com/in/gauravspace"> <img width="20px" src="images/linkedin_favicon.ico" alt="gauravspace" title="Linkedin"></a>
-             
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-      </br>
+    <h2 id="about">About</h2>
+    <p>
+      I am a Senior Robotics Researcher at Omron Research Center of America in
+      California, USA. I completed my Ph.D. in Mechanical and Aerospace
+      Engineering at
+      <a href="https://mae.rutgers.edu/">Rutgers University</a> in 2019 under
+      the supervision of Prof. Xiaoli Bai.
+    </p>
+    <p>
+      My interests include autonomy; guidance, navigation, and control;
+      robotics; optimization; aerospace systems; and control theory.
+    </p>
+    <p>
+      Before coming to Rutgers, I received an MS in Aerospace Engineering from
+      <a href="https://mae.nmsu.edu">New Mexico State University</a> in 2015.
+    </p>
+    <p>
+      In what seems like a lifetime ago, I completed my bachelor’s thesis at the
+      French Space Agency (<a href="https://www.cnes.fr">CNES</a>) in Toulouse,
+      France, under Jean-Yves Prado, on asteroid hazard mitigation. I then
+      worked as a visiting researcher at the Institut de Mécanique Céleste et de
+      Calcul des Éphémérides (<a href="https://imcce.fr">IMCCE</a>), Paris
+      Observatory, with Dr. Florent Deleflie. I also did a summer internship at
+      the Institute of Space Systems, German Aerospace Center (<a
+        href="https://www.dlr.de/en/irs"
+        >DLR</a
+      >) in Bremen, Germany.
+    </p>
+    <p>
+      Prior to graduate studies, I spent wonderful years at
+      <a href="https://www.bits-pilani.ac.in/">BITS-Pilani</a> in India, where I
+      double-majored in Electronics & Instrumentation Engineering and Economics.
+    </p>
 
-      <div class="well" id="news" style="font-size: 15px">
-         <h3 style="margin-top: 0em">News</h3>
-          <hr style="margin-top: 0em; width: 100%; color: black; height: 1px; background-color:black;" />
-         <ul>
-         <li>
-          <b>12/2019</b>: Upcoming engineering note in AIAA Journal of Guidance, Control, and Dynamics on sum-of-squares based disturbance observer design for relative attitude tracking of spacecraft. 
-          </li>
-         <li>
-          <b>10/2019</b>: Upcoming papers at AIAA Scitech, 2020 on carrier landing control and iterative feasible convexification of nonlinear optimal control problems. 
-          </li>
-         <li>
-          <b>01/2019</b>: Paper accepted in the IEEE American Control Conference (ACC), Philadelphia, 2019. 
-          </li>
-                   <li>
-          <b>12/2018</b>: Upcoming paper at 2019 AIAA Scitech on UAV carrier landings. 
-          </li>
-          <li>
-          <b>03/2018</b>: Received travel award for ACC 2018. 
-          </li>
-         <li>
-          <b>01/2018</b>: Paper accepted in the IEEE American Control Conference (ACC), Milwaukee, 2018. 
-          </li>
-         <li>
-          <b>01/2018</b>: Presented paper at AIAA Scitech, Florida. 
-          </li>
-          <li>
-          <b>11/2017</b>: Presented PhD proposal to my dissertation committee. 
-          </li>
-          <li>
-          <b>07/2017</b>: Attended the First American Model Predictive Control Summer School, UW Madison.
-          </li>
-          <li>
-          <b>05/2016</b>: Passed PhD qualifying exams.
-          </li>
-          <li>
-          <b>05/2015</b>: Graduated with MS in Aerospace Engineering.
-          </li>
-          <li>
-          <b>01/2015</b>: Attended ISAS/JAXA Sokendai Asian Winter School, Japanese Aerospace Exploration Agency, Sagamihara, Japan.
-          </li>
-          <li>
-          <b>01/2015</b>: Presented paper at AIAA Guidance, Navigation, and Control Conference, Florida.
-          </li>
-          <li>
-          <b>01/2015</b>: Presented paper at AIAA/AAS Spaceflight Mechanics Meeting, Virginia.
-          </li>
-          </ul>
-        </div>
-      </br>
+    <h2 id="research">Research</h2>
+    <p>
+      My current work focuses on perception, planning, and control for robotics,
+      especially human-robot collaboration and multi-robot systems. During my
+      Ph.D., I developed convex-optimization-based methods for trajectory
+      planning and control, applied to space robotics and autonomous aircraft carrier
+      landing.
+    </p>
 
-        <div class="well" id="pubs" style="font-size: 15px">
-          <h3 style="margin-top: 0em">Publications</h3>
-          <hr style="margin-top: 0em; width: 100%; color: black; height: 1px; background-color:black;" />
-        
-            <ul>
-            <li>
-            <b> Gaurav Misra</b> and Xiaoli Bai,<a href="https://arc.aiaa.org/doi/pdf/10.2514/1.G004810"> "Robust Disturbance Observer based Control for Relative Attitude Tracking using Sum-of-squares Programming,"</a> Journal of Guidance, Control, and Dynamics, in press.
-
-            </li>
-            <li>
-            <b> Gaurav Misra</b> and Xiaoli Bai, "Iteratively Feasible Optimal Spacecraft Guidance using Convex Optimization", AIAA Guidance, Navigation, and Control Conference, Florida, 2020.
-            </li>
-            <li>
-            <b> Gaurav Misra</b> and Xiaoli Bai, "Updated Simulation Results of UAV Carrier Landings", AIAA Modeling and Simulation Technologies Conference, Florida, 2020.
-            </li>
-            <li>
-            <b>Gaurav Misra</b> and Xiaoli Bai,<a href="https://ieeexplore.ieee.org/abstract/document/8814994 "> "Nonlinear Disturbance Observer based Control for Polynomial Systems with Mismatched Uncertainties using Sum-of-Squares Programming"</a>, IEEE American Control Conference, Philadelphia, 2019. 
-            </li>
-            <li>
-<b>Gaurav Misra</b> and Xiaoli Bai,<a href="https://doi.org/10.2514/1.G004160 ">Output-Feedback Stochastic Model Predictive Control for Glideslope Tracking During Aircraft Carrier Landing"</a>, Journal of Guidance, Control, and Dynamics, Volume 42, Number 9,September 2019.
-
-
-            </li>
-            <li> 
-              <b>Gaurav Misra</b>, Tianyu Gao, and Xiaoli Bai,<a href="https://doi.org/10.2514/6.2019-1981/>"> "Modeling and Simulations of UAV Carrier Landings"</a>, AIAA Modeling and Simulation Technologies Conference, California, 2019. 
-            </li>
-             <li>
-              <b>Gaurav Misra</b> and Xiaoli Bai,<a href="https://ieeexplore.ieee.org/document/8431815/> ">Stochastic Model Predictive Control for Gust Alleviation during Aircraft Carrier Landing"</a>, IEEE American Control Conference, Wisconsin, 2018.  <a href="presentation/Misra_ACC2018Presentation.pdf">Presentation</a>
-            </li>
-            <li>
-              <b>Gaurav Misra</b>, Hao Peng, Xiaoli Bai, <a href="https://doi.org/10.2514/6.2018-1454">Halo Orbit Station-keeping using Nonlinear MPC and Polynomial Optimization"</a>, AIAA/AAS Spaceflight Mechanics Meeting, Florida, 2018.  <a href="presentation/GauravMisra_AIAA-2018-1454.pdf">Presentation</a>
-            </li>
-            <li>
-              <b>Gaurav Misra</b>, Xiaoli Bai, <a href="https://arc.aiaa.org/doi/abs/10.2514/1.G002405">"Task Constrained Trajectory Planning of Free-floating Space Robotic Systems using Convex Optimization"</a>, Journal of Guidance, Control, and Dynamics, 2017. 
-            </li>
-            <li>
-              <b>Gaurav Misra</b>, Xiaoli Bai,  <a href="https://arc.aiaa.org/doi/abs/10.2514/1.G002487">"Optimal Path Planning of Free-flying Space Robots using Sequential Convex Optimization"</a>, Journal of Guidance, Control, and Dynamics, 2017. 
-            </li>
-             <li>
-             Sasi Prabhakaran,  Amit Sanyal, <b>Gaurav Misra</b>, <a href="http://www.sciencedirect.com/science/article/pii/S2405896316318195"> "Controllability Analysis of Spacecraft with Only Atitude Actuation Near Small Solar System Bodies"</a>, IFAC Symposium on Nonlinear Control Systems (NOLCOS), 2016. 
-            </li>
-            <li>
-              <b>Gaurav Misra</b>, Maziar Izadi, Amit Sanyal, Daniel Scheeres <a href="http://www.sciencedirect.com/science/article/pii/S0273117715003634"> "Coupled Orbit Attitude Dynamics and Relative State Estimation of Spacecraft Near Small Solar System Bodies"</a>, Advances in Space Research, 2016. 
-            </li>
-            <li>
-            <b> Gaurav Misra</b>, Amit Sanyal,<a href= "https://doi.org/10.2514/6.2015-1777"> "Analysis of Orbit-Attitude Coupling of Spacecraft Near Small Bodies"</a>, AIAA Guidance, Navigation, and Control Conference, Florida, 2015.
-                        <li>
-            <b> Gaurav Misra</b>, Ehsan Samiei, Amit Sanyal,<a href= "http://www.univelt.com/book=5133"> "Asteroid Landing Guidance Design in the Framework of Coupled Orbit-Attitude Spacecraft Dynamics"</a>, AIAA/AAS Spaceflight Mechanics Meeting, Virginia, 2015.
-            </li>
-            <li>
-            <b> Gaurav Misra</b>, "Asteroid Deflection via Yarkovsky Effect Reduction", IAA Planetary Defense Conference, Arizona, 2013.
-            </li>
-             <li>
-            Dominik Quantius, Martin Löscher, <b>Gaurav Misra</b>, Volker Maiwald,<a href="https://elib.dlr.de/84840/"> "List of Potential Target NEOs for Human Missions"</a>, 64th International Astronautical Congress (IAC), China, 2013.
-            </li>
-
-                      </ul>
-          <!--
-          <br/>
-          <h4 id="ws">Workshops</h4>
-          <ul>
-          <li>
-          </li>
-          </ul>
-        -->
-        </div>
-      </br>
-
-</br> 
-
-<div class="well" id="cv" style="font-size: 15px">
-        <h3 id="cv" style="margin-top: 0em">CV</h3>
-        <hr style="margin-top: 0em; width: 100%; color: black; height: 1px; background-color:black;" />
-        Here's my <a href="cv/GauravMisra_CV2.pdf">CV</a>.
+    <h2 id="research-highlights">Research Highlights</h2>
+    <figure>
+      <figcaption>
+        <b>Automatic task decomposition and reactive motion planning for multi-robot systems</b><br />
+        Enabling task and sub-task decomposition based on application needs
+        where robot motion can/cannot be replanned on the fly. In combination with a
+        hybrid motion planner that uses dynamic roadmaps for global path
+        planning and QP-based trajectory optimizer for local planning.
+      </figcaption>
+      <img
+        src="images/research/Multiflex.png"
+        alt="Automatic task and motion planning for multi-robot systems"
+        class="highlight_large"
+      />
+    </figure>
+    <figure>
+      <figcaption>
+        <b>Nonlinear disturbance observer for polynomial systems</b><br />
+        Disturbance observer design for polynomial systems with potentially
+        mismatched uncertainties posed as a Polynomial Matrix Inequality (PMI).
+        PMI's can be converted to sum-of-squares problems and solved efficiently
+        using SDP solvers. Applied to nonlinear relative spacecraft attitude
+        tracking problem with disturbance torques on both the chaser and
+        uncooperative tumbling target spacecraft (Misra & Bai, JGCD 2020).
+      </figcaption>
+<div class="side-by-side">
+  <img
+    src="images/research/DOB.png"
+    alt="Nonlinear disturbance observer for polynomial systems"
+  />
+  <img 
+    src="images/research/relativeattitudetrajectory.gif" 
+    alt="Relative attitude tracking" 
+  />
 </div>
+      </div>
+    </figure>
+    <figure>
+      <figcaption>
+        <b>Iteratively Feasible Spacecraft Guidance</b><br />
+        Modeling non-convex inequality constraints in optimal control using
+        sum-of-squares (SOS)-based Difference of Convex Functions (DC)
+        decomposition. Applied to Clohessy-Hill-Wiltshire (CHW)-based guidance with non-convex path constraints
+        with anytime feasibility under mild conditions (Misra and Bai, AIAA
+        Scitech 2020).
+      </figcaption>
+      <img
+        src="images/research/OptimalGuidance_2.png"
+        alt="Iteratively Feasible Guidance Algorithm"
+        class="highlight"
+      />
+    </figure>
+    <figure>
+      <figcaption>
+        <b>Stochastic MPC for Carrier Landing</b><br />
+        Output-feedback stochastic MPC attenuates carrier airwake and
+        turbulence, achieving tight glideslope tracking in Monte Carlo trials (Misra and Bai, JGCD 2019).
+      </figcaption>
+      <img
+        src="images/research/Glideslope_MC.png"
+        alt="Stochastic MPC for Carrier Landing"
+        class="highlight"
+      />
+      <img
+        src="images/research/glideslope_comp.png"
+        alt="Stochastic MPC for Carrier Landing"
+        class="highlight"
+      />
+    </figure>
 
-</br>
+    <figure>
+      <figcaption>
+        <b>Lissajous orbit station-keeping</b><br />A polynomial
+        optimization-based MPC approach for spacecraft stationkeeping near
+        Lagrange points using polynomial approximation of circular restricted
+        three body problem dynamics (Misra, Peng & Bai, AIAA Scitech 2018).
+      </figcaption>
+      <img
+        src="images/Research/PMPC.png"
+        alt="Polynomial Optimization-based MPC"
+        class="highlight"
+      />
+    </figure>
+        <figure><figcaption>
+        <b>Free-Floating Space Robot Planning</b><br />
+        Task-constrained trajectory planning cast as a convex QP, enabling rapid
+        trajectory generation for a 10-DOF free-floating arm (Misra & Bai, JGCD 2017).
+      </figcaption>
+      <img
+        src="images/research/spacerobot.png"
+        alt="Free-Floating Space Robot Planning"
+        class="highlight"
+      />
+      
+    </figure>
+    <h2 id="publications">Publications</h2>
+    <p>
+      See
+      <a href="https://scholar.google.com/citations?user=khM5VlgAAAAJ&hl=en"
+        >Google Scholar</a
+      >
+      for the full list.
+    </p>
 
-<div class="well" id="contact" style="font-size: 15px">
-        <h3 id="contact" style="margin-top: 0em">Contact</h3>
-        <hr style="margin-top: 0em; width: 100%; color: black; height: 1px; background-color:black;" />
-        <ul>
-          <li>
-          <b>Email</b>: gaurav.misra@rutgers.edu
-        </li>
-                <li>
+    <h2 id="patents">Patents</h2>
+    <ul>
+      <li>
+        <a
+          href="https://patents.google.com/patent/WO2024203391A1/en?inventor=gaurav+misra&oq=gaurav+misra"
+          target="_blank"
+          >WO2024203391A1</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://patents.google.com/patent/WO2024203381A1/en?inventor=gaurav+misra&oq=gaurav+misra"
+          target="_blank"
+          >WO2024203381A1</a
+        >
+      </li>
+    </ul>
+    <h2 id="code">Code</h2>
+    <p>
+      Some (not regularly updated) code on
+      <a href="https://github.com/misraga">GitHub</a>. These repositories are
+      primarily for learning and demonstration; they are not optimized,
+      maintained, or intended for production use.
+    </p>
 
-            <a href="https://www.linkedin.com/in/gauravspace"> Linkedin</a>
-           
-        </li>
-      </ul>
-</div>
-
-</br>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <h2 id="contact">Contact</h2>
+    <p>
+      Email: gaurav.misra@rutgers.edu<br />
+      <a href="https://www.linkedin.com/in/gauravspace">LinkedIn</a>
+    </p>
   </body>
 </html>
