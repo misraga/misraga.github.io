@@ -122,11 +122,17 @@
         font-size: 1.2em;
         margin: 0 0.5em;
       }
+      
     </style>
   </head>
   <body>
     <h1>Gaurav Misra</h1>
-
+<script>
+  document.addEventListener('contextmenu', e => {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+  });
+</script>
+    
     <div class="nav">
       <a href="#about">Home</a>
       <a href="#research">Research</a>
