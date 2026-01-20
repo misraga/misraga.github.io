@@ -1,336 +1,532 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Gaurav Misra</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <style>
-      .side-by-side {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1em;
-        align-items: flex-start; /* top-align the two boxes */
+      :root {
+        --text: #111;
+        --muted: #444;
+        --rule: #d0d0d0;
+        --link: #0645ad;
+        --maxw: 1100px;
       }
-      .side-by-side img {
-        flex: 1 1 48%;
-        max-width: 48%;
-        height: auto;
-        margin: 0; /* override any inline or inherited margins */
-        display: block; /* ensure no baseline-text shifts */
-      }
-      .side-by-side img:first-of-type {
-  /* this targets the first image (your DOB.png) */
-  margin-top: 30px;  /* tweak this value until it lines up */
-}
+
       body {
-        font-family: monospace;
-        max-width: 900px;
-        margin: 1em auto;
-        padding: 0;
-        color: black;
-        background: white;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+          "Noto Sans", "Liberation Sans", sans-serif;
+        margin: 1.25rem auto;
+        padding: 0 1rem;
+        color: var(--text);
+        background: #fff;
+        max-width: var(--maxw);
+        line-height: 1.55;
       }
+
       a {
-        color: blue;
+        color: var(--link);
         text-decoration: none;
       }
       a:hover {
         text-decoration: underline;
       }
+
       h1 {
-        margin-bottom: 0.5em;
+        font-size: 1.75rem;
+        margin: 0.25rem 0 0.5rem 0;
+        line-height: 1.2;
       }
       h2 {
-        margin-top: 2em;
+        font-size: 1.35rem;
+        margin-top: 2rem;
+        margin-bottom: 0.65rem;
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 0.35rem;
       }
-      .nav {
-        margin-bottom: 2em;
+
+      hr {
+        border: 0;
+        border-top: 1px solid var(--rule);
+        margin: 2rem 0;
       }
-      .nav a {
-        margin-right: 15px;
+
+      .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: flex-start;
       }
-      img.profile {
-        float: right;
-        margin-left: 20px;
-        width: 200px;
+
+      .sidebar {
+        flex: 0 0 240px;
       }
-      figure {
-        margin: 1.5em 0;
-      }
-      img.highlight {
+
+      .sidebar img.profile {
+        width: 100%;
+        height: auto;
         display: block;
-        margin: 0.5em auto;
-        width: 500px;
+        border-radius: 10px;
+        margin-bottom: 0.9rem;
       }
-      img.highlight_large {
-        display: block;
-        margin: 0.5em auto;
-        width: 800px;
+
+      .sidebar .title,
+      .sidebar .contact-info {
+        font-size: 0.95rem;
+        color: var(--muted);
+        margin-bottom: 1rem;
       }
-      img.highlight_small {
+
+      .sidebar .title p {
+        margin: 0;
+      }
+
+      .sidebar .contact-info a {
         display: inline-block;
-        margin: 0.5em;
-        width: 400px;
+        margin: 0.15rem 0;
       }
+
+      .sidebar .nav {
+        margin-top: 1rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--rule);
+      }
+      .sidebar .nav a {
+        display: block;
+        padding: 0.25rem 0;
+        font-size: 1rem;
+        color: var(--text);
+      }
+
+      .main-content {
+        flex: 1;
+        min-width: 0;
+      }
+
+      figure {
+        margin: 1.25rem 0 1.75rem 0;
+      }
+
       figcaption {
         text-align: left;
-        margin: 0.5em auto;
-        font-style: italic;
+        margin: 0.35rem 0 0.6rem 0;
+        font-size: 0.95rem;
+        color: var(--muted);
       }
-      hr {
-        margin: 2em 0;
+
+      img.highlight,
+      img.highlight_large,
+      img.highlight_small {
+        display: block;
+        margin: 0.5rem auto;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
       }
-      figure,
-      .diagram {
-        margin: 1.5em 0;
-      }
-      .diagram {
+
+      .side-by-side {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .block {
-        flex: 1;
-        padding: 0.5em;
-        border: 1px solid #444;
-        border-radius: 4px;
-        background: #fff;
-        text-align: center;
-        font-size: 0.9em;
-      }
-      .arrow {
-        margin: 0 0.3em;
-        font-weight: bold;
-      }
-      .diagram {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         flex-wrap: wrap;
-        margin: 2em 0;
+        gap: 1rem;
+        align-items: flex-start;
       }
-      .block {
-        flex: 0 0 150px;
-        padding: 0.8em;
-        border: 2px solid #444;
-        border-radius: 4px;
-        background: #eef;
+
+      .side-by-side img {
+        flex: 1 1 320px;
+        max-width: 100%;
+        height: auto;
+        margin: 0;
+        display: block;
+        border-radius: 8px;
+      }
+
+      /* Optional: nicer list spacing for academic sections */
+      ul {
+        padding-left: 1.2rem;
+      }
+      li {
+        margin: 0.35rem 0;
+      }
+
+      /* Mobile: stack sidebar on top */
+      @media (max-width: 820px) {
+        .sidebar {
+          flex: 1 1 100%;
+        }
+      }
+
+      img.highlight,
+img.highlight_large,
+img.highlight_small {
+  max-width: 90%;
+}
+
+      
+
+      footer.site-footer {
         text-align: center;
-        font-size: 0.9em;
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: 2.5rem;
+        border-top: 1px solid var(--rule);
+        padding-top: 1rem;
       }
-      .arrow {
-        flex: 0 0 auto;
-        font-size: 1.2em;
-        margin: 0 0.5em;
-      }
-      
     </style>
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MPQ1PPD6KS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-MPQ1PPD6KS");
+    </script>
   </head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPQ1PPD6KS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-MPQ1PPD6KS');
-</script>
   <body>
-    <h1>Gaurav Misra</h1>
-<script>
-  document.addEventListener('contextmenu', e => {
-    if (e.target.tagName === 'IMG') e.preventDefault();
-  });
-</script> 
-    
-    <div class="nav">
-      <a href="#about">Home</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#patents">Patents</a>
-      <a href="#code">Code</a>
-      <a href="#contact">Contact</a>
+    <script>
+      // Optional: consider removing this (it doesn't protect much and hurts UX).
+      document.addEventListener("contextmenu", (e) => {
+        if (e.target.tagName === "IMG") e.preventDefault();
+      });
+    </script>
+
+    <div class="wrapper">
+      <aside class="sidebar">
+        <img src="images/gm3.jpg" alt="Gaurav Misra" class="profile" />
+
+        <h1>Gaurav Misra</h1>
+
+        <div class="title">
+          <p>
+            Senior Robotics Researcher<br />
+            Omron Research Center of America<br />
+            California, USA
+          </p>
+        </div>
+
+        <div class="contact-info">
+          <a href="mailto:gaurav.misra@rutgers.edu">Email</a><br />
+          <a
+            href="https://www.linkedin.com/in/gauravspace"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          ><br />
+          <a
+            href="https://scholar.google.com/citations?user=khM5VlgAAAAJ&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Google Scholar</a
+          ><br />
+          <a
+            href="https://github.com/misraga"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <!-- Optional: add CV link -->
+          <!-- <br /><a href="GauravMisra_CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a> -->
+        </div>
+
+        <nav class="nav" aria-label="Page sections">
+          <a href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#research-highlights">Research Highlights</a>
+          <a href="#publications">Publications</a>
+          <a href="#service">Service</a>
+          <a href="#patents">Patents</a>
+          <a href="#code">Code</a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <h2 id="about">About</h2>
+        <p>
+          I am a Senior Robotics Researcher at Omron Research Center of America in
+          California, USA. I completed my Ph.D. in Mechanical and Aerospace
+          Engineering at
+          <a
+            href="https://mae.rutgers.edu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Rutgers University</a
+          >
+          in 2019 under the supervision of Prof. Xiaoli Bai.
+        </p>
+        <p>
+          My interests include autonomy; guidance, navigation, and control;
+          robotics; optimization; aerospace systems; and control theory.
+        </p>
+        <p>
+          Before coming to Rutgers, I received an MS in Aerospace Engineering from
+          <a
+            href="https://mae.nmsu.edu"
+            target="_blank"
+            rel="noopener noreferrer"
+            >New Mexico State University</a
+          >
+          in 2015.
+        </p>
+        <p>
+          I completed my bachelor’s thesis at the French Space Agency
+          (<a href="https://www.cnes.fr" target="_blank" rel="noopener noreferrer"
+            >CNES</a
+          >) in Toulouse, France, under Jean-Yves Prado, on asteroid hazard
+          mitigation. I then worked as a visiting researcher at the Institut de
+          Mécanique Céleste et de Calcul des Éphémérides
+          (<a href="https://imcce.fr" target="_blank" rel="noopener noreferrer"
+            >IMCCE</a
+          >), Paris Observatory, with Dr. Florent Deleflie. I also did a summer
+          internship at the Institute of Space Systems, German Aerospace Center
+          (<a
+            href="https://www.dlr.de/en/irs"
+            target="_blank"
+            rel="noopener noreferrer"
+            >DLR</a
+          >) in Bremen, Germany.
+        </p>
+        <p>
+          Prior to graduate studies, I spent years at
+          <a
+            href="https://www.bits-pilani.ac.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >BITS Pilani</a
+          >
+          in India, where I double-majored in Electronics &amp; Instrumentation
+          Engineering and Economics.
+        </p>
+
+        <hr />
+
+        <h2 id="research">Research</h2>
+        <p>
+          My current work focuses on perception, planning, and control for
+          ground, aerial, and space robotics, especially autonomous space systems, human-robot collaboration and multi-robot systems in the field.
+          During my Ph.D., I developed convex-optimization-based methods for
+          trajectory planning and control, applied to space robotics and
+          autonomous aircraft carrier landing.
+        </p>
+
+        <hr />
+
+        <h2 id="research-highlights">Research Highlights</h2>
+
+        <figure>
+          <figcaption>
+            <strong
+              >Provably safe attitude path planning on SO(3) via convex lifting and
+              semidefinite programming.</strong
+            ><br />
+            Using sum-of-squares programming, the attitude path planning problem
+            on SO(3) is posed as a semidefinite program with guaranteed constraint
+            satisfaction (including static or moving keep-out or field-of-view zones) throughout the attitude path—without combinatorial
+            branching or temporal discretization. <em>[Coming soon]</em>
+          </figcaption>
+          <img
+            src="images/Research/latlon_trajectory.png"
+            alt="Monte Carlo runs of geometric attitude paths on SO(3) under multiple keep-out zones"
+            class="highlight_large"
+          />
+        </figure>
+        <figure>
+          <figcaption>
+            
+            <strong
+              >Dynamic speed and separation monitoring for human-robot collaboration[IEEE RO-MAN 2025]</strong
+            ><br />
+            Using 3D safety sensors to enable close proximity between humans and high-speed industrial robots. 3D active stereo/Lidar sensors provide real-time position of humans (and robot), the robot speed is scaled
+            based on the tractable real-time generated, geometric primitives while adhreing to requirements in ISO 13855, ISO 10218-1/2. 
+          </figcaption>
+          <img
+            src="images/Research/Roman.png"
+            alt="Speed and separation monitoring"
+            class="highlight_large"
+          />
+        </figure>
+        <figure>
+          <figcaption>
+            
+            <strong
+              >Automatic task decomposition and reactive motion planning for
+              multi-robot systems.</strong
+            ><br />
+            Task/sub-task decomposition based on application needs, paired with a
+            hybrid motion planner using dynamic roadmaps for global planning and
+            a QP-based trajectory optimizer for local planning.
+          </figcaption>
+          <img
+            src="images/Research/Multiflex.png"
+            alt="Automatic task and motion planning for multi-robot systems"
+            class="highlight_large"
+          />
+        </figure>
+
+        <figure>
+          <figcaption>
+            <strong
+              >Nonlinear disturbance observer for polynomial systems using
+              sum-of-squares optimization.</strong
+            ><br />
+            Disturbance observer design for polynomial systems with potentially
+            mismatched uncertainties posed as a polynomial matrix inequality
+            (PMI). PMIs can be converted to sum-of-squares programs and solved
+            efficiently via SDP solvers. Applied to nonlinear relative spacecraft
+            attitude tracking with disturbance torques on both the chaser and an
+            uncooperative tumbling target spacecraft (Misra &amp; Bai, JGCD
+            2020).
+          </figcaption>
+          <div class="side-by-side">
+            <img
+              src="images/Research/DOB.png"
+              alt="Nonlinear disturbance observer for polynomial systems"
+            />
+            <img
+              src="images/Research/relativeattitudetrajectory.gif"
+              alt="Relative attitude tracking"
+            />
+          </div>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <strong
+              >Iteratively feasible spacecraft guidance using DC
+              decomposition.</strong
+            ><br />
+            Non-convex inequality constraints are modeled using difference-of-convex
+            (DC) decomposition, where the decomposition is posed as a sum-of-squares
+            optimization. Applied to Clohessy–Hill–Wiltshire (CHW)-based guidance
+            with non-convex path constraints and anytime feasibility under mild
+            conditions (Misra &amp; Bai, AIAA SciTech 2020).
+          </figcaption>
+          <img
+            src="images/Research/OptimalGuidance_2.png"
+            alt="Iteratively feasible guidance algorithm"
+            class="highlight"
+          />
+        </figure>
+
+        <figure>
+          <figcaption>
+            <strong>Stochastic MPC for carrier landing.</strong><br />
+            Output-feedback stochastic MPC attenuates carrier airwake and
+            turbulence, achieving tight glideslope tracking in Monte Carlo trials
+            (Misra &amp; Bai, JGCD 2019).
+          </figcaption>
+          <img
+            src="images/Research/Glideslope_MC.png"
+            alt="Stochastic MPC for carrier landing"
+            class="highlight"
+          />
+          <img
+            src="images/Research/glideslope_comp.png"
+            alt="Stochastic MPC for carrier landing comparison"
+            class="highlight"
+          />
+        </figure>
+
+        <figure>
+          <figcaption>
+            <strong>Lissajous orbit station-keeping.</strong><br />
+            Polynomial-optimization-based MPC for spacecraft stationkeeping near
+            Lagrange points using polynomial approximation of circular restricted
+            three-body problem dynamics (Misra, Peng &amp; Bai, AIAA SciTech
+            2018).
+          </figcaption>
+          <img
+            src="images/Research/PMPC.png"
+            alt="Polynomial optimization-based MPC"
+            class="highlight"
+          />
+        </figure>
+
+        <figure>
+          <figcaption>
+            <strong>Free-floating space robot planning.</strong><br />
+            Task-constrained trajectory planning cast as a convex QP, enabling
+            rapid trajectory generation for a 10-DOF free-floating arm (Misra
+            &amp; Bai, JGCD 2017).
+          </figcaption>
+          <img
+            src="images/Research/spacerobot.png"
+            alt="Free-floating space robot planning"
+            class="highlight"
+          />
+        </figure>
+
+        <hr />
+
+        <h2 id="publications">Publications</h2>
+        <p>
+          See
+          <a
+            href="https://scholar.google.com/citations?user=khM5VlgAAAAJ&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Google Scholar</a
+          >
+          for the full list.
+        </p>
+
+        <hr />
+
+        <h2 id="service">Service</h2>
+        <p style="color: var(--muted);">
+        </p>
+
+        <h3 style="margin: 1rem 0 0.25rem 0; font-size: 1.05rem;">Professional Service</h3>
+        <ul>
+          <li><strong>Conference Reviewer:</strong> AIAA Scitech, ICRA, ACC, CASE, AIM </li>
+          <li><strong>Journal Reviewer:</strong> AIAA Journal of Guidance, Control, and Dynamics, IEEE Robotics and Automation Letters, Acta Astronautica, IEEE Transactions on Aerospace and Electronic Systems, AIAA Journal of Spacecraft and Rockets, Control Engineering Practice</li>
+        </ul>
+        <hr />
+
+        <h2 id="patents">Patents</h2>
+        <ul>
+          <li>
+            <a
+              href="https://patents.google.com/patent/US12502779B2/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              >US12502779B2</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://patents.google.com/patent/US12397424B2/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              >US12397424B2</a
+            >
+          </li>
+        </ul>
+
+        <hr />
+
+        <h2 id="code">Code</h2>
+        <p>
+          Some (not regularly updated) code on
+          <a
+            href="https://github.com/misraga"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >. These repositories are primarily for learning and demonstration;
+          they are not optimized, maintained, or intended for production use.
+        </p>
+
+        <footer class="site-footer">
+          © 2026 Gaurav Misra. All rights reserved.
+        </footer>
+      </main>
     </div>
-
-    <img src="images/gm3.jpg" alt="Gaurav Misra" class="profile" />
-
-    <h2 id="about">About</h2>
-    <p>
-      I am a Senior Robotics Researcher at Omron Research Center of America in
-      California, USA. I completed my Ph.D. in Mechanical and Aerospace
-      Engineering at
-      <a href="https://mae.rutgers.edu/">Rutgers University</a> in 2019 under
-      the supervision of Prof. Xiaoli Bai.
-    </p>
-    <p>
-      My interests include autonomy; guidance, navigation, and control;
-      robotics; optimization; aerospace systems; and control theory.
-    </p>
-    <p>
-      Before coming to Rutgers, I received an MS in Aerospace Engineering from
-      <a href="https://mae.nmsu.edu">New Mexico State University</a> in 2015.
-    </p>
-    <p>
-      In what seems like a lifetime ago, I completed my bachelor’s thesis at the
-      French Space Agency (<a href="https://www.cnes.fr">CNES</a>) in Toulouse,
-      France, under Jean-Yves Prado, on asteroid hazard mitigation. I then
-      worked as a visiting researcher at the Institut de Mécanique Céleste et de
-      Calcul des Éphémérides (<a href="https://imcce.fr">IMCCE</a>), Paris
-      Observatory, with Dr. Florent Deleflie. I also did a summer internship at
-      the Institute of Space Systems, German Aerospace Center (<a
-        href="https://www.dlr.de/en/irs"
-        >DLR</a
-      >) in Bremen, Germany.
-    </p>
-    <p>
-      Prior to graduate studies, I spent wonderful years at
-      <a href="https://www.bits-pilani.ac.in/">BITS-Pilani</a> in India, where I
-      double-majored in Electronics & Instrumentation Engineering and Economics.
-    </p>
-
-    <h2 id="research">Research</h2>
-    <p>
-      My current work focuses on perception, planning, and control for robotics,
-      especially human-robot collaboration and multi-robot systems. During my
-      Ph.D., I developed convex-optimization-based methods for trajectory
-      planning and control, applied to space robotics and autonomous aircraft carrier
-      landing.
-    </p>
-
-    <h2 id="research-highlights">Research Highlights</h2>
-    <figure>
-      <figcaption>
-        <b>Automatic task decomposition and reactive motion planning for multi-robot systems</b><br />
-        Enabling task and sub-task decomposition based on application needs
-        where robot motion can/cannot be replanned on the fly. In combination with a
-        hybrid motion planner that uses dynamic roadmaps for global path
-        planning and QP-based trajectory optimizer for local planning.
-      </figcaption>
-      <img
-        src="images/Research/Multiflex.png"
-        alt="Automatic task and motion planning for multi-robot systems"
-        class="highlight_large"
-      />
-    </figure>
-    <figure>
-      <figcaption>
-        <b>Nonlinear disturbance observer for polynomial systems using sum-of-squares optimization</b><br />
-        Disturbance observer design for polynomial systems with potentially
-        mismatched uncertainties posed as a Polynomial Matrix Inequality (PMI).
-        PMI's can be converted to sum-of-squares problems and solved efficiently
-        using SDP solvers. Applied to nonlinear relative spacecraft attitude
-        tracking problem with disturbance torques on both the chaser and
-        uncooperative tumbling target spacecraft (Misra & Bai, JGCD 2020).
-      </figcaption>
-<div class="side-by-side">
-  <img
-    src="images/Research/DOB.png"
-    alt="Nonlinear disturbance observer for polynomial systems"
-  />
-  <img 
-    src="images/Research/relativeattitudetrajectory.gif" alt="..." 
-    alt="Relative attitude tracking" 
-  />
-</div>
-      </div>
-    </figure>
-    <figure>
-      <figcaption>
-        <b>Iteratively Feasible Spacecraft Guidance using DC Decomposition</b><br />
-        Modeling non-convex inequality constraints in optimal control using
-       Difference of Convex Functions (DC) decomposition, where the decomposition is posed as a sum-of-squares optimization. Applied to Clohessy-Hill-Wiltshire (CHW)-based guidance with non-convex path constraints
-        with anytime feasibility under mild conditions (Misra and Bai, AIAA
-        Scitech 2020).
-      </figcaption>
-      <img
-        src="images/Research/OptimalGuidance_2.png"
-        alt="Iteratively Feasible Guidance Algorithm"
-        class="highlight"
-      />
-    </figure>
-    <figure>
-      <figcaption>
-        <b>Stochastic MPC for Carrier Landing</b><br />
-        Output-feedback stochastic MPC attenuates carrier airwake and
-        turbulence, achieving tight glideslope tracking in Monte Carlo trials (Misra and Bai, JGCD 2019).
-      </figcaption>
-      <img
-        src="images/Research/Glideslope_MC.png"
-        alt="Stochastic MPC for Carrier Landing"
-        class="highlight"
-      />
-      <img
-        src="images/Research/glideslope_comp.png"
-        alt="Stochastic MPC for Carrier Landing"
-        class="highlight"
-      />
-    </figure>
-
-    <figure>
-      <figcaption>
-        <b>Lissajous orbit station-keeping</b><br />A polynomial
-        optimization-based MPC approach for spacecraft stationkeeping near
-        Lagrange points using polynomial approximation of circular restricted
-        three body problem dynamics (Misra, Peng & Bai, AIAA Scitech 2018).
-      </figcaption>
-      <img
-        src="images/Research/PMPC.png"
-        alt="Polynomial Optimization-based MPC"
-        class="highlight"
-      />
-    </figure>
-        <figure><figcaption>
-        <b>Free-Floating Space Robot Planning</b><br />
-        Task-constrained trajectory planning cast as a convex QP, enabling rapid
-        trajectory generation for a 10-DOF free-floating arm (Misra & Bai, JGCD 2017).
-      </figcaption>
-      <img
-        src="images/Research/spacerobot.png"
-        alt="Free-Floating Space Robot Planning"
-        class="highlight"
-      />
-      
-    </figure>
-    <h2 id="publications">Publications</h2>
-    <p>
-      See
-      <a href="https://scholar.google.com/citations?user=khM5VlgAAAAJ&hl=en"
-        >Google Scholar</a
-      >
-      for the full list.
-    </p>
-
-    <h2 id="patents">Patents</h2>
-    <ul>
-      <li>
-        <a
-          href="https://patents.google.com/patent/WO2024203391A1/en?inventor=gaurav+misra&oq=gaurav+misra"
-          target="_blank"
-          >WO2024203391A1</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://patents.google.com/patent/WO2024203381A1/en?inventor=gaurav+misra&oq=gaurav+misra"
-          target="_blank"
-          >WO2024203381A1</a
-        >
-      </li>
-    </ul>
-    <h2 id="code">Code</h2>
-    <p>
-      Some (not regularly updated) code on
-      <a href="https://github.com/misraga">GitHub</a>. These repositories are
-      primarily for learning and demonstration; they are not optimized,
-      maintained, or intended for production use.
-    </p>
-
-    <h2 id="contact">Contact</h2>
-    <p>
-      Email: gaurav.misra@rutgers.edu<br />
-      <a href="https://www.linkedin.com/in/gauravspace">LinkedIn</a>
-    </p>
   </body>
-  <footer style="text-align:center; font-size:0.8em; margin-top:2em;">
-  © 2025 Gaurav Misra. All rights reserved.
-</footer>
 </html>
